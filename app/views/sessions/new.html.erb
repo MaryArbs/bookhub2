@@ -1,6 +1,6 @@
-<h1>Sign Up to Join Book Hub </h1>
+<h1>Login</h1>
 
-<%= form_for(@user, url: '/signup') do |f| %>
+<%= form_for(@user, url: '/login') do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %>
     <br />
@@ -10,8 +10,6 @@
     <%= f.label :password %>
     <%= f.password_field :password %>
     <br />
-    <%= f.submit "Sign Up" %>
+    <%= f.submit "Log In" %>
   
   <% end %>
-
-  

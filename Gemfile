@@ -32,6 +32,9 @@ gem 'nokogiri'
 gem 'open_uri_redirections', '~> 0.2.1'
 gem 'require_all'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'omniauth'
+gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

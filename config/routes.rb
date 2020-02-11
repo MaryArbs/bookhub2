@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   delete '/logout', to: 'sessions#destroy'
+  
+  get '/login', to: 'sessions#new'
+
+  get '/auth/:provider/callback' => 'sessions#omniauth'
   resources :users, only: [:show]
   # resources :favorites
   # resources :authors

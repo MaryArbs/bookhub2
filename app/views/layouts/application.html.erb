@@ -17,7 +17,8 @@
       <%= f.submit "Logout" %>
     <% end %>
   <% else %>
-    <%= link_to("Sign Up", '/signup') %>
+    <%= link_to("Login", '/login') %>|
+    <%= link_to("Sign Up", '/signup') %>|
     <%= link_to("Log In With Google", '/auth/google_oauth2') %>
   <% end %>
     

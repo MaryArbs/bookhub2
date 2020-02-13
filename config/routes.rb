@@ -17,9 +17,17 @@ Rails.application.routes.draw do
     # nested resource for books
     resources :books, only: [:show, :index]
   end
+  
   resources :books, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   
-  resources :favorites
+  
+  resources :books, only: [:show] do  #book has many favorites 
+    resources :favorites, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+  end 
+
+ 
+
+
   
  
  

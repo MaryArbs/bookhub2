@@ -9,19 +9,7 @@
     <%= f.label :password %>
     <%= f.password_field :password %>
     <br />
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <br />
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %><br>
     <%= f.submit "Login" %>
   
   <% end %>
-
-
-# <%= form_tag('/login') do |f| %>
-#     <%= label_tag "email:" %>
-#     <%= text_field_tag :email %>
-#     <br />
-#     <%= label_tag "password:" %>
-#     <%= text_field_tag :password %>
-#     <br />
-#     <%= submit_tag "Login" %>
-# <% end %>

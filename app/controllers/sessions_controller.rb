@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
    @user = User.new
   end 
 
-
   def create #logging in 
     @user = User.find_by(:email=> params[:user][:email])
     if @user && @user.authenticate(params[:user][:password])
@@ -17,9 +16,9 @@ class SessionsController < ApplicationController
   end 
 
   
-  def destroy
+  def destroy #logout
     session.delete(:user_id)
-    redirect_to '/signup'
+    redirect_to root_path
   end
 
   def omniauth  #google log in 
@@ -27,6 +26,7 @@ class SessionsController < ApplicationController
     u.username = auth[:info][:email]
     u.email = auth[:info][:email]
     u.password = SecureRandom.hex
+    
    end 
    
    if @user.valid?

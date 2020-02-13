@@ -1,0 +1,25 @@
+<h1> Edit your book!</h1>
+
+<%= render 'layouts/errors', {object: @book} %>
+
+
+<%= form_with(model: @book) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :author_id %>
+    <%= f.collection_select :author_id, Author.all, :id, :name, prompt: true  %>
+   
+  <br>
+  
+  
+<h3>Or Add a New Author</h3>
+   <%= f.fields_for :author do |auth_field| %>
+   <%= auth_field.label :name %>
+   <%= auth_field.text_field :name %>
+   <br>
+<% end %>
+
+
+<%= f.submit "Create" %>
+<% end %>

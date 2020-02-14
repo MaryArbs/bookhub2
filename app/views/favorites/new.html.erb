@@ -1,4 +1,6 @@
-<%= form_with(model:@book) do |f| %>
+<%= render 'layouts/errors', {object: @favorite} %>
+
+<%= form_with(model:[@book, @favorite]) do |f| %>
     <%= f.label :book_id %>
     <%= f.collection_select :book_id, Book.all, :id, :title, prompt: true  %>
 <br>

@@ -2,7 +2,7 @@
 
 <%= render 'layouts/errors', {object: @user} %>
 
-<%= form_for(@user, url: 'login') do |f| %>
+<%= form_for(@user, url: 'login', local: true) do |f| %>
     <%= f.label :email %>
     <%= f.email_field :email %>
     <br />

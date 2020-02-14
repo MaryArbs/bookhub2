@@ -15,6 +15,7 @@
     You are logged in as <%= current_user.email%>!
     <%= form_with(url: '/logout', method: 'delete') do |f| %>
     <%= f.submit "Logout" %><br>
+    <%= link_to("Home", root_path) %> |
     <%= link_to("My Books", books_path) %> |
     <%= link_to("Add Book", new_book_path) %> |
     <% end %>

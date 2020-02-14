@@ -1,17 +1,12 @@
 <h1> Add a new book to your list!</h1>
 
-<%= render 'layouts/errors', {object: @book} %>
+<%= render 'layouts/errors', {object: @book, local: true} %>
 
 
 <%= form_with(model:[@author, @book]) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <br>
-    <%= f.label :author_id %>
-    <%= f.collection_select :author_id, Author.all, :id, :name, prompt: true  %>
-   
-  <br>
   
+  <%= render 'form',  {f: f} %>
+    
   
 <h3>Or Add a New Author</h3>
    <%= f.fields_for :author do |auth_field| %>
@@ -19,8 +14,7 @@
    <%= auth_field.text_field :name %>
    <br>
 <% end %>
-
-
+<br>
 <%= f.submit "Create" %>
 <% end %>
 

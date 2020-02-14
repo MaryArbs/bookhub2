@@ -1,0 +1,5 @@
+<%= f.label :title %>
+<%= f.text_field :title %><br>
+<%= f.label :author_id %>
+<%= f.collection_select :author_id, Author.all, :id, :name, prompt: true  %>
+<br>

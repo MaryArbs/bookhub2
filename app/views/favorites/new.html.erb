@@ -1,4 +1,4 @@
-<%= render 'layouts/errors', {object: @favorite} %>
+<%= render 'layouts/errors', {object: @favorite, local:true} %>
 
 <%= form_with(model:[@book, @favorite]) do |f| %>
     <%= f.label :book_id %>

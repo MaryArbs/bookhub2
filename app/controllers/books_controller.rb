@@ -3,10 +3,10 @@ class BooksController < ApplicationController
   
   def index
     if params[:author_id] && @author = Author.find_by_id(params[:author_id])
-      @books = @author.books
+      @books = @author.books.order_alphabetically
       
     else
-       @books = Book.all
+       @books = Book.all.order_alphabetically
     end
   end
 
@@ -20,17 +20,15 @@ class BooksController < ApplicationController
     end 
   end 
 
-    
   def create 
-   @book = Book.new(book_params)
-    if @book.save 
+    @book = Book.new(book_params)
+      if @book.save 
         redirect_to book_path(@book)
-        
-    else
+      else
         render :new
-    end
+      end
   end
- 
+
   def show
     @book = Book.find(params[:id])
   end
@@ -53,6 +51,6 @@ end
 
   private
   def book_params
-    params.require(:book).permit(:title, :author_id, author_attributes: [:name], favorites_attributes: [:review, :user_id])
+    params.require(:book).permit(:title, :author_id, author_attributes: [:name])
   end 
 end

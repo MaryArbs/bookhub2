@@ -3,7 +3,6 @@
 <h2>Title: <%= @book.title %></h2>
 <h2>Author: <%= @book.author.name%></h2>
 
-<%= link_to("Add to Favorites", new_book_favorite_path(@book)) %>
-<%= link_to("Edit", edit_book_path(@book)) %>
-
+<%= link_to("Add to favorites", new_book_favorite_path(@book)) %>|
+<%= link_to("Edit", edit_book_path(@book)) %>|
 <%= link_to( "Delete", book_path(@book), method:'delete') %>

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   
   
   resources :books, only: [:show] do  #book has many favorites 
-    resources :favorites, only: [:index, :new, :create]
+    resources :favorites, only: [:index, :new, :create, :show]
   end 
   
   resources :favorites

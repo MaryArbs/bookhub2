@@ -1,3 +1,11 @@
+<h1>Here are your fave books! </h1>
+
+
+<% @favorites.each do |favorite| %>
+   <li>Title:<%= link_to(favorite.book.try(:title), favorite_path(favorite.id)) %><br>
+   Review: <%= favorite.review %></li>
+<% end %>
+
 
 
 

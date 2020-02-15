@@ -1,1 +1,6 @@
-<%= @favorite.book.title %>
+<h1> <%= link_to(@favorite.book.title, favorites_path) %> is now on your favorite's list! </h1>
+
+<%= link_to("See Favorites", favorites_path) %> |
+<%= link_to("Edit", edit_favorite_path(@favorite)) %>|
+<%= link_to( "Delete", favorite_path(@favorite), method:'delete') %>
+

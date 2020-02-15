@@ -1,9 +1,9 @@
 <h1> Add a new book to your list!</h1>
 
-<%= render 'layouts/errors', {object: @book, local: true} %>
+<%= render 'layouts/errors', {object: @book} %>
 
 
-<%= form_with(model:[@author, @book]) do |f| %>
+<%= form_with(model:[@author, @book], local:true) do |f| %>
   
   <%= render 'form',  {f: f} %>
     

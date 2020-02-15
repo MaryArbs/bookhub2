@@ -3,7 +3,7 @@
 <%= render 'layouts/errors', {object: @book} %>
 
 
-<%= form_with(model: @book) do |f| %>
+<%= form_with(model: @book, local:true) do |f| %>
   
   <%= render 'form',  {f: f} %> 
     

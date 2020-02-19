@@ -1,12 +1,18 @@
 <%= render 'layouts/errors', {object: @favorite} %>
 
+<div class='container text-center'>
+<h2 class='display-4'>Add to Favorites</h2>
 <%= form_with(model:[@book, @favorite], local:true) do |f| %>
-    <%= f.label :book_id %>
+    <div class ="container">
+    <%= f.label :book_id, class: 'h4' %>
     <%= f.collection_select :book_id, Book.all, :id, :title, prompt: true  %>
 <br>
 
 <h3>Add a Review</h3>
+<div class='form-group'>
   <%= f.text_area :review %><br>
 </br>
-  <%= f.submit "Create" %>
+  <%= f.submit "Create", class:"btn btn-success" %>
 <% end %>
+</div>
+

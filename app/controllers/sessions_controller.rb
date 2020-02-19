@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:new, :create, :omniauth]
+  before_action :current_user
+  skip_before_action :require_login, only: [:index, :new, :create, :omniauth]
 
+  def index
+  end 
   
   def new
    @user = User.new
@@ -10,9 +13,10 @@ class SessionsController < ApplicationController
     @user = User.find_by(:email=> params[:user][:email])
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
+      flash[:success] = "You have successfully logged in!"
       redirect_to user_path(@user)
     else
-     flash[:message] = "Please fill out all required fields!"
+     flash[:alert] = "Please fill out all required fields!"
      redirect_to '/login'
     end
   end 

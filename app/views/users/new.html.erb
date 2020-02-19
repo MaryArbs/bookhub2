@@ -1,18 +1,33 @@
-<h1>Sign Up to Join Book Hub </h1>
-
 <%= render 'layouts/errors', {object: @user} %>
 
+<<div class='container text-center'>
+<h1>Sign Up to Join Book Hub </h1>
 <%= form_for(@user, url: '/signup') do |f| %>
-    <%= f.label :username %>
+  <div class='form-group'>
+    <%= f.label :username, class: 'h4' %>:
     <%= f.text_field :username %><br>
-    <%= f.label :email %>
+    </div>
+    <div class='form-group'>
+    <%= f.label :email, class:'h4' %>:
     <%= f.email_field :email %>
     <br />
-    <%= f.label :password %>
+    </div>
+    <div class='form-group'>
+    <%= f.label :password, class: 'h4' %>:
     <%= f.password_field :password %>
     <br />
-    <%= f.submit "Sign Up" %>
+    </div>
+    <%= f.submit "Sign Up", class:"btn btn-success" %>
+ <% end %>
+  </div>
+ 
   
-  <% end %>
 
   
+ 
+  
+
+
+
+
+ 

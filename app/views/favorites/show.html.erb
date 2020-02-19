@@ -1,6 +1,9 @@
-<h1> <%= link_to(@favorite.book.title, favorites_path) %> is now on your favorite's list! </h1>
+<div class='container text-center'>
+<h2 class='display-4'><%= link_to(@favorite.book.try(:title), favorites_path) %> is on your favorite's list! </h2>
 
-<%= link_to("See Favorites", favorites_path) %> |
-<%= link_to("Edit", edit_favorite_path(@favorite)) %>|
-<%= link_to( "Delete", favorite_path(@favorite), method:'delete') %>
+<%= link_to "See Favorites", favorites_path, class: "btn btn-success" %>
+<%= link_to "Edit", edit_favorite_path(@favorite), class: "btn btn-success" %>
+<%= link_to "Delete", favorite_path(@favorite), method:'delete', class: 'btn btn-danger' %>
+</div>
+
 

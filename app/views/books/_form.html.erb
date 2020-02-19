@@ -1,5 +1,7 @@
-<%= f.label :title %>
-<%= f.text_field :title %><br>
-<%= f.label :author_id %>
+<div class ="container">
+<%= f.label :title, class: 'h4' %>:
+<%= f.text_field :title%><br>
+<%= f.label :author_id, class: 'h4' %>:
 <%= f.collection_select :author_id, Author.all, :id, :name, prompt: true  %><br>
 <br>
+</div>

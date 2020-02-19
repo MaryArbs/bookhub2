@@ -1,2 +1,5 @@
-<h1>Current User: <%= current_user.username.titleize %></h1>
+<%= render 'layouts/flash'%>
 
+<div class='container text-center'>
+<h2 class='display-4'>Hi <%= current_user.username.titleize %>! Thanks for being here!</h2>
+</div>

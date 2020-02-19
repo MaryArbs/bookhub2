@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root 'home#index'
+  root 'sessions#index'
   
   get '/signup', to: 'users#new', as: 'signup'
   post '/signup', to: 'users#create'
@@ -13,10 +13,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+
   resources :authors, only: [:show] do
     # nested resource for books
     resources :books, only: [:show, :index]
   end
+
   
   resources :books, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   

@@ -1,8 +1,15 @@
-<h1>You added this book to your list:</h1>
+<div class='container text-center'>
+<h2 class='display-4'>You added this book to your list:</h2>
 
 <h2>Title: <%= @book.title %></h2>
 <h2>Author: <%= @book.author.name%></h2>
 
-<%= link_to("Add to favorites", new_book_favorite_path(@book)) %>|
-<%= link_to("Edit", edit_book_path(@book)) %>|
-<%= link_to( "Delete", book_path(@book), method:'delete') %>
+<%= link_to "My Books", books_path, class: "btn btn-success" %>
+<%= link_to "Add to favorites", new_book_favorite_path(@book), class: "btn btn-success" %>
+<%= link_to "Edit", edit_book_path(@book), class: "btn btn-success" %>
+<%= link_to "Delete", book_path(@book), method:'delete', class: 'btn btn-danger' %> 
+</div>
+
+
+
+

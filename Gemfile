@@ -35,6 +35,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'omniauth'
 gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
+gem 'bootstrap', '~> 4.3.1'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

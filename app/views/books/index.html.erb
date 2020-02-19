@@ -2,11 +2,11 @@
 <h2 class='display-4'>All Books:</h2>
 <h3>There are <%= @books.count %> book(s)!</h3>
 
-<h4><ul class="list-group">
+<ul class="list-group">
 <% @books.each do |book| %>
- <%= link_to book.title, book_path(book.id) %>
+<li class="list-group-item"> Title: <%= link_to book.title, book_path(book.id), class: 'text-info'  %><br> by: <%= book.author.name %></li>
  <% end %>
-</ul></h4><br>
+</ul>
 </div>
 
 

@@ -8,7 +8,7 @@ Fork and clone this repo.
 
 cd into the project folder.
 
-Run bundle install then run shotgun and navigate to the appropriate local address.
+Run bundle install then run rails s and navigate to the appropriate local address.
 
 This app is not currently deployed because I haven't dealt with setting up the database on an actual server.
 

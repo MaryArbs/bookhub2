@@ -3,20 +3,20 @@ class FavoritesController < ApplicationController
   def index
      if params[:book_id] && @book = Book.find_by_id(params[:book_id])
         @favorites = @book.favorites #showing all the reviews for specific book 
-    else 
+     else 
         @favorites = Favorite.all # all books that have been favorited 
-    end 
+     end 
   end 
 
   
    def new #checking for nested route 
-        if params[:book_id] && @book = Book.find_by_id(params[:book_id])
-          @favorite = @book.favorites.build #new #has_many 
-        else 
-          @favorite = Favorite.new
-          @favorite.build_book #belongs_to relationship
-        end 
-      end
+      if params[:book_id] && @book = Book.find_by_id(params[:book_id])
+        @favorite = @book.favorites.build #new #has_many 
+      else 
+        @favorite = Favorite.new
+        @favorite.build_book #belongs_to relationship
+      end 
+    end
 
     def create #adding to favorites 
       @favorite = Favorite.new(favorite_params)
@@ -46,14 +46,11 @@ class FavoritesController < ApplicationController
       @favorite = Favorite.find(params[:id])
       @favorite.destroy
       redirect_to favorites_path
-  end
+    end
   
 
-
-    private
+  private
     def favorite_params
       params.require(:favorite).permit(:book_id, :review)
     end 
-
-
 end

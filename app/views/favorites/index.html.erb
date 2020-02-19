@@ -7,7 +7,7 @@
 <% current_user.favorites.each do |favorite| %>
  <li class="list-group-item">Title: <%= link_to favorite.book.title, favorite_path(favorite.id), class: 'text-info'  %><br>
   Review: <%= favorite.review %></li>
-<% end %>
+ <% end %>
 </ul>
 </div>
 

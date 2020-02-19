@@ -1,9 +1,7 @@
 class FavoritesController < ApplicationController
-  before_action :current_user
 
   def index
-    
-    if params[:book_id] && @book = Book.find_by_id(params[:book_id])
+     if params[:book_id] && @book = Book.find_by_id(params[:book_id])
         @favorites = @book.favorites #showing all the reviews for specific book 
     else 
         @favorites = Favorite.all # all books that have been favorited 

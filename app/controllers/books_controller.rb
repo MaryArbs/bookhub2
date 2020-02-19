@@ -1,23 +1,13 @@
 class BooksController < ApplicationController
-  before_action :current_user
   
   def index
-    if params[:author_id] && @author = Author.find_by_id(params[:author_id])
-      @books = @author.books.order_alphabetically
-    else
-       @books = Book.all.order_alphabetically
-       binding.pry
-    end
+      @books = Book.all.order_alphabetically
+  
   end
 
   def new #checking for nested route 
-    if params[:author_id] && @author = Author.find_by_id(params[:author_id])
-      @books = @author.books.build #new #has_many 
-      
-    else 
       @book = Book.new
       @book.build_author #belongs_to relationship
-    end 
   end 
 
   def create 
@@ -51,6 +41,6 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:title, :author_id, author_attributes: [:name], favorites_attributes: [:user_id, :book_id, :review])
+    params.require(:book).permit(:title, :author_id, author_attributes: [:name])
   end 
 end

@@ -10,4 +10,16 @@ class Book < ApplicationRecord
       self.order(title: :asc)   
     end
 
+    def self.search(search)
+      if search
+        author = Author.find_by(name: search)
+        if author
+          self.where(author_id: author)
+        else 
+          Book.all
+        end 
+      else 
+        Book.all.order_alphabetically
+      end 
+    end
 end

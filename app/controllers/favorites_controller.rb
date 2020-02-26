@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
 
   def index
      if params[:book_id] && @book = Book.find_by_id(params[:book_id])
-        @favorites = @book.favorites
+        @favorites = @book.favorites #return all favorites instances associated with a particular book instance. (Show book on form)
      else 
         @favorites = Favorite.all # all books that have been favorited 
      end 
@@ -11,10 +11,9 @@ class FavoritesController < ApplicationController
   
    def new #checking for nested route 
       if params[:book_id] && @book = Book.find_by_id(params[:book_id])
-        @favorite = @book.favorites.build #new #has_many 
+        @favorite = @book.favorites.build #has_many #Instanstiante a new favorite associated with that book
       else 
         @favorite = Favorite.new
-        @favorite.build_book #belongs_to relationship
       end 
     end
 

@@ -1,6 +1,6 @@
 <div class='container text-center'>
 <h2 class='display-4'>All Books:</h2>
-<h3>There are <%= @books.count %> book(s)!</h3>
+<h3><%= @books.count %> book(s)!</h3>
 
 <ul class="list-group">
 <% @books.each do |book| %>
@@ -8,6 +8,16 @@
  <% end %>
 </ul>
 </div>
+
+<div class='container text-center'>
+<h2 class='display-6'>Search by Author:</h2>
+  <%= form_tag(books_path, method: "get") do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag "Search" %>
+  <% end %><br>
+</div>
+
+
 
 
 

@@ -17,11 +17,14 @@ class AuthorsController < ApplicationController
     #       render :new
     #     end
     #   end
+
+    # def show 
+    #   @author = Author.find_by(params[:author_id])
+    # end 
     
     #   private
     
     #   def author_params
     #     params.require(:author).permit(:name)
     #   end
-    # end
 end

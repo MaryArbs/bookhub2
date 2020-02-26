@@ -14,20 +14,24 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
 
-  resources :authors, only: [:show] do
-    # nested resource for books
-    resources :books, only: [:show, :index]
-  end
+  # resources :authors, only: [:show] do
+  #   # nested resource for books
+  #   resources :books, only: [:show, :index]
+  # end
 
   
-  resources :books, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :books 
   
   
-  resources :books, only: [:show] do  #book has many favorites 
-    resources :favorites, only: [:index, :new, :create, :show]
+  
+  resources :books, only: [:show] do  #book has many favorites #parent
+    resources :favorites, only: [:index, :new, :create, :show] #belongs_to
   end 
   
   resources :favorites
+  
+  
+
  
 
 

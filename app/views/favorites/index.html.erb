@@ -1,12 +1,13 @@
 <div class='container text-center'>
-<h2 class='display-4'>Here are your fave books: </h2>
-<h3>You have <%= current_user.favorites.count %> fave book(s)!</h3>
+  <h2 class='display-4'>Here are your fave books: </h2>
+  <h3>You have <%= current_user.favorites.count %> fave book(s)!</h3>
 
-<ul class="list-group">
-<% current_user.favorites.each do |favorite| %>
- <li class="list-group-item">Title: <%= link_to favorite.book.title, favorite_path(favorite.id), class: 'text-info'  %><br>
-  Review: <%= favorite.review %></li>
- <% end %>
-</ul>
+  <ul class="list-group">
+   <% current_user.favorites.each do |favorite| %>
+     <li class="list-group-item">Title: <%= link_to favorite.book.try(:title), favorite_path(favorite.id), class: 'text-info'  %><br>
+      Review: <%= favorite.review %></li>
+   <% end %>
+  </ul>
+
 </div>
 

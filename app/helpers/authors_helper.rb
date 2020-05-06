@@ -1,2 +1,1 @@
-module AuthorsHelper
-end
+module AuthorsHelper; end

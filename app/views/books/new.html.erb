@@ -1,22 +1,20 @@
 <%= render 'layouts/errors', {object: @book} %>
 
 <div class='container text-center'>
-<h2 class='display-4'>Add a book to your list</h2>
-<%= form_with(model:[@author, @book], local:true) do |f| %>
+  <h2 class='display-4'>Add a book to your list</h2>
+    <%= form_with(model:[@author, @book], local:true) do |f| %>
   
-  <%= render 'form',  {f: f} %>
+    <%= render 'form',  {f: f} %>
     
 <h3>OR Add a New Author</h3>
   <div class='form-group'>
-   <%= f.fields_for :author do |auth_field| %>
-   <%= auth_field.label :name, class: 'h4' %>:
-   <%= auth_field.text_field :name %>
-   <br>
-  <% end %>
-<br>
-<%= f.submit "Create", class:"btn btn-success" %>
-  <% end %>
-</div>
+    <%= f.fields_for :author do |auth_field| %>
+      <%= auth_field.label :name, class: 'h4' %>:
+      <%= auth_field.text_field :name %><br>
+    <% end %><br>
+      <%= f.submit "Create", class:"btn btn-success" %>
+    <% end %>
+  </div>
 
 
   

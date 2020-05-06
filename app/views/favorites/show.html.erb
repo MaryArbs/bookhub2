@@ -1,4 +1,5 @@
 <div class='container text-center'>
+
 <h2 class='display-4'><%= link_to(@favorite.book.try(:title), favorites_path) %> is on your favorite's list! </h2>
 
 <%= link_to "See Favorites", favorites_path, class: "btn btn-success" %>

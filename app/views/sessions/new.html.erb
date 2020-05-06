@@ -2,21 +2,21 @@
 <%= render 'layouts/flash'%>
 
 <div class='container text-center'>
-<h1>Login</h1>
-<%= form_for(@user, url: 'login', local: true) do |f| %>
-  <div class='form-group'>
-  <%= f.label :email, class: 'h4' %>:
-  <%= f.email_field :email %>
-  <br />
-  </div>
-  <div class='form-group'>
-  <%= f.label :password, class: 'h4' %>:
-  <%= f.password_field :password %>
-  <br />
-  </div>
+  <h1>Login</h1>
+  <%= form_for(@user, url: 'login', local: true) do |f| %>
+    <div class='form-group'>
+      <%= f.label :email, class: 'h4' %>:
+      <%= f.email_field :email %>
+    <br />
+    </div>
+      <div class='form-group'>
+        <%= f.label :password, class: 'h4' %>:
+        <%= f.password_field :password %>
+        <br />
+      </div>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %><br>
     <%= f.submit "Login", class:"btn btn-success" %>
-  <% end %>
+    <% end %>
   </div>
 
 

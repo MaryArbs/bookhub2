@@ -1,16 +1,20 @@
 <div class='container text-center'>
-  <h2>There are <%= @books.count %> book(s)!</h2>
-    <div class='container text-center'>
-      <h3 class='display-9'>Search by Author:</h3>
-      <%= form_tag(books_path, method: "get") do %>
-      <%= text_field_tag(:search, params[:search]) %>
-      <%= submit_tag "Search" %>
-      <% end %><br>
-    </div>
-  <ul class="list-group">
-  <% @books.each do |book| %>
-    <li class="list-group-item"> Title: <%= link_to book.title, book_path(book.id), class: 'text-info'  %><br> by: <%= book.author.name %></li>
-  <% end %>
-  </ul>  
+	<h2>There are <%= @books.count %> book(s)!</h2>
+	<div class='container text-center'>
+		<h3 class='display-9'>Search by Author:</h3>
+		<%= form_tag(books_path, method: "get") do %>
+			<%= text_field_tag(:search, params[:search]) %>
+				<%= submit_tag "Search" %>
+					<% end %>
+						<br> </div>
+	<ul class="list-group">
+		<% @books.each do |book| %>
+			<li class="list-group-item"> Title:
+				<%= link_to book.title, book_path(book.id), class: 'text-info'  %>
+					<br> by:
+					<%= book.author.name %>
+			</li>
+			<% end %>
+	</ul>
 </div>
 

@@ -1,12 +1,10 @@
 <div class='container text-center'>
-  <h2 class='display-4'>The following book has been added:</h2>
-
-  <h2>Title: <%= @book.title %></h2>
-  <h2>Author: <%= @book.author.name%></h2>
-
-  <%= link_to "All Books", books_path, class: "btn btn-success" %>
-  <%= link_to "Add to favorites", new_book_favorite_path(@book), class: "btn btn-success" %>
-  <%= link_to "Delete", book_path(@book), method:'delete', class: 'btn btn-danger' %> 
+	<h2 class='display-4'>The following book has been added:</h2>
+	<h2>Title: <%= @book.title %></h2>
+	<h2>Author: <%= @book.author.name%></h2>
+	<%= link_to "All Books", books_path, class: "btn btn-success" %>
+		<%= link_to "Add to favorites", new_book_favorite_path(@book), class: "btn btn-success" %>
+			<%= link_to "Delete", book_path(@book), method:'delete', class: 'btn btn-danger' %>
 </div>
 
 
